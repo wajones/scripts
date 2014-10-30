@@ -6,7 +6,7 @@ $|++;
 my $table = "website_alusercache";
 my $new_table = "website_alusercache_new";
 my $columns; #= "receipt_type_id,people_id_credited,people_id_debited,transaction_id,lead_id,amount,notes,timestamp"; 
-my $dbh = DBI->connect("dbi:mysql:database=alshare;host=prodeast-aldbinstance.cavohb8ptjyr.us-east-1.rds.amazonaws.com;port=3306", "allistlover", 'Phuyei!s1r');
+my $dbh = DBI->connect("dbi:mysql:database=alshare;host=prodeast-aldbinstance.cavohb8ptjyr.us-east-1.rds.amazonaws.com;port=3306", "USER NAME", 'PASSWORD');
 
 my $col_sth = $dbh->prepare( "select * from $table where 1=0;" );
 $col_sth->execute;
