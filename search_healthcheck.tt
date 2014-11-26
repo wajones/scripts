@@ -1,0 +1,16 @@
+define service {
+	use generic-service
+	host_name [% server_class %]_[% ip %]
+	service_description [% description %]
+	normal_check_interval 4
+	retry_check_interval 1
+	check_command [% test %]![% port %]![% secure %]![% warning %]![% critical %]
+	action_url /nagiosgraph/cgi-bin/show.cgi?host=$HOSTNAME$&service=$SERVICEDESC$&geom=1000x200' onMouseOver='showGraphPopup(this)' onMouseOut='hideGraphPopup()' rel='/nagiosgraph/cgi-bin/showgraph.cgi?host=$HOSTNAME$&service=$SERVICEDESC$
+}
+
+define host {
+	use generic-host
+	host_name [% server_class %]_[% ip %]
+	address [% ip %]
+	alias [% server_class %]_[% ip %]
+}
